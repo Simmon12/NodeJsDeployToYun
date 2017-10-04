@@ -1,0 +1,28 @@
+{
+  "apps": [
+    {
+      "name": "Website",
+       "script": "app.js",
+       "env": {
+          "COMMON_VARIABLE": "true"
+       },
+       "env_production": {
+          "NODE_ENV": "production"
+       }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "lizhi",
+      "host": ["120.78.128.92"],
+      "port": "22",
+      "ref": "origin/master",
+      "repo": "https://github.com/Simmon12/NodeJsDeployToYun.git",
+      "path": "/www/website/production",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
